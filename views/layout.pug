@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title SmartList | #{titulo}
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css")
+        link(rel="stylesheet", href="/css/style.css")
+    body(class= clase) 
+        block contenido
+
+
+
+        script(src="/js/bootstrap.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/sweetalert2@11')
+        script(src="/js/sidebar.js")  
+        script(src="/js/app.js", type="module")

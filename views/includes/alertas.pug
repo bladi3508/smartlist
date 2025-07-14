@@ -1,0 +1,5 @@
+if(alertas)
+    each alerta in alertas 
+        div(class=`alert alert-${alerta.tipo} alert-dismissible fade show`, role='alert')
+            |  #{alerta.mensaje}.
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')

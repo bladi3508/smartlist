@@ -1,0 +1,37 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.px-md-4
+          h1.h1.mb-4.mt-4.text-center Perfil de usuario
+
+          .row.mt-4 
+            .col-sm-12.col-md-8.col-xl-6.col-lg-5.mx-auto 
+             .bg-white.rounded.shadow-sm.p-3 
+              h4.text-center Imformación de cuenta
+              include ../includes/alertas.pug  
+
+              .mt-4.d-flex.flex-row.justify-content-between.px-sm-3
+                p.h5
+                 i.bi.bi-person-square
+                 |  #{usuario.nombre} 
+                
+                a(href="/editar-perfil", class="btn btn-outline-dark btn-sm") 
+                 i.bi.bi-pencil-square
+
+              .mt-1.d-flex.flex-row.justify-content-between.px-sm-3
+                p.h5
+                 i.bi.bi-envelope
+                 |  #{usuario.email} 
+
+              .mt-3.d-flex.flex-row.justify-content-center.px-sm-3
+                a(href="/cambiar-password",class="link-primary link-offset-2 link-underline link-underline-opacity-0") Cambiar contraseña
+                 
+            
+             

@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand.topbar
+    .container-fluid
+        button#toggleSidebar.btn.btn-link.d-lg-none
+            i.bi.bi-list.fs-4
+        p(class="navbar-brand my-auto")
+            i.bi.bi-person-workspace
+            |  #{usuario.nombre}
+        .d-flex.align-items-center.ms-auto
+            .input-group.d-none.d-md-flex
+                a(href="/logout", class="btn btn-primary") Cerrar Sesión

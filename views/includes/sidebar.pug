@@ -1,0 +1,28 @@
+#sidebar.sidebar.d-flex.flex-column
+  .sidebar-header.p-3.d-flex.align-items-center.justify-content-center
+    i.bi.bi-speedometer2.fs-4.text-white.logo-icon(style='display: none;')
+    span.fs-4.text-white.logo-text SmartList
+    button#closeSidebar.btn.btn-link.text-white.ms-auto.d-lg-none
+      i.bi.bi-x-lg
+  hr.my-0.bg-secondary
+  .p-3
+    ul.nav.flex-column
+      li.nav-item
+        a.nav-link(href='/inicio', id="inico", data-pagina="1")
+          i.bi.bi-house-door
+          span Inicio
+      li.nav-item
+        a.nav-link(href='/proyecto-crear', id="crear", data-pagina="2")
+          i.bi.bi-node-plus-fill
+          span Registrar Proyectos
+      li.nav-item
+        a.nav-link(href='/perfil', id="perfil", data-pagina="3")
+          i.bi.bi-person-badge
+          span Perfil
+
+      
+    .sidebar-footer.d-lg-none.p-3
+
+        a(href="/logout", class="btn btn-outline-light w-100") 
+          i.bi.bi-box-arrow-left 
+          |  Cerrar Sesión

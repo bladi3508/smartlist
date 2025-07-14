@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.p-3.p-md-4
+          h1.h1.mb-3.text-center Registrar un proyecto nuevo
+          .row.mt-5
+            .col-md-6.col-xl-5.col-lg-5.mx-auto
+              form(action="/proyecto-crear", method="post", class="bg-secondary p-3 p-md-4 rounded shadow-sm")
+                    h3.text-center.text-white.mb-4.texto  Registrar proyecto
+                    
+                    include ../includes/alertas.pug  
+
+                    .form-floating.mb-3
+                        input(type="text", name="proyecto", id="proyecto", class="form-control", placeholder="Proyecto de...")
+                        label(for="proyecto") Nombre del proyecto  
+                    input(type="submit", value="Registrar", class="btn btn-primary btn-lg btn-block w-100")

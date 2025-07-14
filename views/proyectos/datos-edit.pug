@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.px-md-4
+          h1.h1.mb-4.mt-4.text-center Cambiar nombre de usuario
+
+          .row 
+           .col-sm-12.col-md-6.col-xl-5.col-lg-5.mx-auto 
+            form(action="", method="post", class="bg-white p-2 p-md-3 rounded shadow-sm") 
+             h4.text-center.mb-3.texto  Cambiar nombre de usuario 
+
+             include ../includes/alertas.pug  
+             
+             .form-floating.mb-3
+                    input(type="text", name="nombre", id="nombre", class="form-control", placeholder="Ingresa tu nombre", value= usuario.nombre)
+                    label(for="correo") Nombre completo 
+             input(type="submit", value="Guardar Cambios", class="btn btn-primary btn-lg btn-block w-100") 

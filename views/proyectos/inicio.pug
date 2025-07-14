@@ -1,0 +1,27 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.px-md-4
+          h1.h1.mb-4.mt-4.text-center Proyectos
+
+          include ../includes/mensaje.pug
+
+          div(class="row g-1")
+            if(proyectos)
+              each proyecto in proyectos
+                .col-12.col-md-6.col-lg-4.col-xl-3.mb-3
+                  .rounded.bg-primary.p-3.h-100
+                    h6.text-center.text-white= proyecto.proyecto
+                    hr.text-white.w-100
+                    .hstack.gap-2.px-2.mt-3
+                      a(href=`/proyecto-tareas?url=${proyecto.url}`, class="btn btn-outline-light btn-sm w-50") Ver Tareas 
+                      a(href=`/eliminar-proyecto?id=${proyecto.id}`, class="btn btn-danger btn-sm w-50") Eliminar
+            
+          

@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.p-3.p-md-4
+          h1.h1.mb-3.text-center= proyecto.proyecto
+          .d-flex.justify-content-center.mt-4 
+            button(type="button", class="btn btn-primary btn-sm", id="btnAgregar") 
+                i.bi.bi-plus-circle.me-1
+                | Nueva Tarea
+          .row.mt-5
+            div(class="col-sm-12 col-md-8 col-xl-8 col-lg-8 mx-auto", id="tareasDiv")
+
+
+
+
+
+
+        include ../includes/modal.pug     

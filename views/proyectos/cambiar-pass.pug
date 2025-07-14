@@ -1,0 +1,27 @@
+extends ../layout.pug
+
+block contenido
+
+    div(class="d-flex")
+       include ../includes/sidebar.pug
+   
+       div(class="main-content", id="mainContent")
+        include ../includes/navbar.pug
+
+        .container-fluid.px-md-4
+          h1.h1.mb-4.mt-4.text-center Cambio de contraseña
+
+          .row 
+           .col-sm-12.col-md-6.col-xl-5.col-lg-5.mx-auto 
+            form(action="", method="post", class="bg-white p-2 p-md-3 rounded shadow-sm") 
+             h4.text-center.mb-3.texto  Define tu nueva contraseña
+
+             include ../includes/alertas.pug  
+             
+             .form-floating.mb-3
+                        input(type="password", name="password", id="password", value="", class="form-control", placeholder="Ingresa tu contraseña")
+                        label(for="password") Contraseña Actual
+             .form-floating.mb-3
+                        input(type="password", name="nuevoPass", id="nuevoPass", class="form-control", placeholder="Ingresa tu contraseña")
+                        label(for="nuevoPass") Nueva Contraseña
+             input(type="submit", value="Guardar Cambios", class="btn btn-primary btn-lg btn-block w-100") 

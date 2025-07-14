@@ -1,0 +1,33 @@
+extends ../layout.pug
+
+block contenido
+    h1.text-center.mt-5.upTask SmartList.
+    h3.text-center.lead.h1.text-white Regístrate de una manera fácil y sencilla, para comenzar a gestionar tus proyectos.
+    .container.mt-5
+        .row 
+            .col-md-6.col-xl-5.col-lg-5.mx-auto 
+                form(action="/registro", method="post", class="bg-form p-3 p-md-5 rounded shadow-sm")
+                    h3.text-center.text-white.mb-3.texto  Crea tu cuenta
+                    if(errores)
+                       each error in errores
+                            div(class=`alert alert-${error.tipo} alert-dismissible fade show`, role='alert')
+                                |  #{error.mensaje}.
+                                button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+
+                    .form-floating.mb-3
+                        input(type="text", name="nombre", id="nombre", class="form-control", placeholder="Ingresa tu nombre", value= nombre)
+                        label(for="correo") Nombre completo  
+                    .form-floating.mb-3
+                        input(type="email", name="email", id="email", class="form-control", placeholder="ejemplo@correo.com..", value= email)
+                        label(for="correo") Correo electrónico  
+                    .form-floating.mb-3
+                        input(type="password", name="password", id="password", class="form-control", placeholder="Ingresa tu contraseña")
+                        label(for="correo") Contraseña
+                    .form-floating.mb-3
+                        input(type="password", name="password2", id="password2", class="form-control", placeholder="Confirma tu contraseña")
+                        label(for="correo") Confirma tu contraseña
+                    input(type="submit", value="Crear cuenta", class="btn btn-primary btn-lg btn-block w-100")
+
+                .mt-4.mb-5.d-flex.justify-content-between
+                    a(href="/", class="link-offset-2 link-underline link-underline-opacity-0 link-color") Iniciar sesión
+                    a(href="/olvide", class="link-offset-2 link-underline link-underline-opacity-0 link-color") Olvide mi contraseña
